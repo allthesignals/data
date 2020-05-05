@@ -568,9 +568,9 @@ if (DEBUG) {
           id: 'ds.serializer.json-api.extractMeta',
         }
       );
-      warn(
+      assert(
         'The JSONAPISerializer does not work with the EmbeddedRecordsMixin because the JSON API spec does not describe how to format embedded resources.',
-        !props.isEmbeddedRecordsMixin,
+        !props.isEmbeddedRecordsMixin || props.isEmbeddedRecordsMixinCompatible === true,
         {
           id: 'ds.serializer.embedded-records-mixin-not-supported',
         }
